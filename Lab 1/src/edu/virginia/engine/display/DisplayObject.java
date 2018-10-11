@@ -144,6 +144,19 @@ public class DisplayObject {
 		this.setImage(fileName);
 	}
 
+	public DisplayObject(String id, String fileName, Point position) {
+		this.position = position;
+		this.pivotPoint = zero;
+		this.rotation = 0;
+		this.visible = true;
+		this.alpha = 1.0f;
+		this.oldAlpha = 0.0f;
+		this.scaleX = 1.0;
+		this.scaleY = 1.0;
+		this.setId(id);
+		this.setImage(fileName);
+	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
