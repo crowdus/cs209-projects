@@ -70,7 +70,7 @@ public class AnimatedSprite extends Sprite {
                //set curr frame
                super.draw(g);
            }
-
+           this.gameClock.resetGameClock();
        }
     }
 }
