@@ -28,7 +28,6 @@ public class AnimatedSprite extends Sprite {
 
     private GameClock gameClock; //GameClock class??
 
-
     //constructor that takes a ID, filename, and position
     public AnimatedSprite(String id, String filename, Point position) {
         super(id, filename, position);

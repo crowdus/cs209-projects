@@ -1,4 +1,6 @@
 package edu.virginia.engine.display;
+import java.lang.String;
+import java.awt.Point;
 
 public class Animation extends AnimatedSprite{
 
@@ -8,7 +10,7 @@ public class Animation extends AnimatedSprite{
 
     private int endFrame;
 
-    public void Animation(String id, int startFrame, int endFrame){
+    public Animation(String id, int startFrame, int endFrame){
         this.id = id;
         this.startFrame = startFrame;
         this.endFrame = endFrame;
