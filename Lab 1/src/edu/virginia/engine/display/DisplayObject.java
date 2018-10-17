@@ -39,10 +39,10 @@ public class DisplayObject {
 	private Boolean visible;
 
 	/* Alpha is float to define transparency */
-	private Float alpha;
+	private float alpha;
 
 	/* Alpha is the old alpha float value (previous frame) */
-	private Float oldAlpha;
+	private float oldAlpha;
 
 	/* scale x is a double to scale in x dir */
 	private Double scaleX;
@@ -86,7 +86,7 @@ public class DisplayObject {
 		this.alpha = alpha;
 	}
 
-	public Float getAlpha() {
+	public float getAlpha() {
 		return this.alpha;
 	}
 
@@ -94,7 +94,7 @@ public class DisplayObject {
 		this.oldAlpha = oldAlpha;
 	}
 
-	public Float getOldAlpha() {
+	public float getOldAlpha() {
 		return oldAlpha;
 	}
 
