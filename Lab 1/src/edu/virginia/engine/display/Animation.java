@@ -2,13 +2,15 @@ package edu.virginia.engine.display;
 import java.lang.String;
 import java.awt.Point;
 
-public class Animation extends AnimatedSprite{
+public class Animation {
 
     private String id;
 
     private int startFrame;
 
     private int endFrame;
+
+    public Animation(){ }
 
     public Animation(String id, int startFrame, int endFrame){
         this.id = id;
