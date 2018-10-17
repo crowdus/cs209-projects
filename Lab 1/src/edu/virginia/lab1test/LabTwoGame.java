@@ -19,8 +19,7 @@ public class LabTwoGame extends Game{
 
     Point pt = new Point(0,0);
     /* Create a sprite object for our game. We'll use mario */
-    //AnimatedSprite mario = new AnimatedSprite("Mario", "Mario.png", pt);
-    Sprite mario = new Sprite("Mario", "mariojump1.jpg");
+    AnimatedSprite mario = new AnimatedSprite("Mario", "Mario.png", pt);
 
     /**
      * Constructor. See constructor in Game.java for details on the parameters given
@@ -36,7 +35,9 @@ public class LabTwoGame extends Game{
     @Override
     public void update(ArrayList<Integer> pressedKeys) {
         super.update(pressedKeys);
-
+        if(mario==null){
+            return;
+        }
         /* Make sure mario is not null. Sometimes Swing can auto cause an extra frame to go before everything is initialized */
         if (mario != null) mario.update(pressedKeys);
         if (pressedKeys.contains(KeyEvent.VK_UP)) {
@@ -120,7 +121,7 @@ public class LabTwoGame extends Game{
             mario.setScaleX(new Double(mario.getScaleX() * .9));
             mario.setScaleY(new Double(mario.getScaleY() * .9));
         }
-        /*if (pressedKeys.contains(KeyEvent.VK_1)) { //decrement speed
+        if (pressedKeys.contains(KeyEvent.VK_1)) { //decrement speed
             mario.setAnimationSpeed(-100);
         }
         if (pressedKeys.contains(KeyEvent.VK_2)) { //increment speed
@@ -131,7 +132,7 @@ public class LabTwoGame extends Game{
         }
         if (pressedKeys.contains(KeyEvent.VK_4)) { //decrement speed
             mario.animate("kick");
-        }*/
+        }
     }
 
     /**
