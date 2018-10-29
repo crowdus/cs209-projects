@@ -8,6 +8,8 @@ import edu.virginia.engine.display.Sprite;
 import java.awt.Point;
 import java.util.concurrent.TimeUnit;
 import java.awt.Graphics2D;
+import edu.virginia.engine.display.Animation;
+import edu.virginia.engine.display.AnimatedSprite;
 
 /**
  * Example game that utilizes our engine. We can create a simple prototype game with just a couple lines of code
@@ -15,16 +17,17 @@ import java.awt.Graphics2D;
  * */
 public class LabOneGame extends Game{
 
+	Point pt = new Point(0,0);
 	/* Create a sprite object for our game. We'll use mario */
-	Sprite mario = new Sprite("Mario", "Mario.png");
-	
+	AnimatedSprite mario = new AnimatedSprite("Mario", "Mario.png", pt);
+
 	/**
 	 * Constructor. See constructor in Game.java for details on the parameters given
 	 * */
 	public LabOneGame() {
-		super("Lab One Test Game", 500, 300);
+		super("Lab Two Test Game", 500, 300);
 	}
-	
+
 	/**
 	 * Engine will automatically call this update method once per frame and pass to us
 	 * the set of keys (as strings) that are currently being pressed down
@@ -79,7 +82,7 @@ public class LabOneGame extends Game{
 				mario.setOldAlpha(mario.getAlpha());
 				mario.setAlpha(0.0f);
 				/* found the code for "sleeping" on stackoverflow. Jean mentioned on Piazza to use a timer so we needed
-				* to look up how to implement one*/
+				 * to look up how to implement one*/
 				try {
 					Thread.sleep(300);
 				} catch (InterruptedException e) {
@@ -116,8 +119,20 @@ public class LabOneGame extends Game{
 			mario.setScaleX(new Double(mario.getScaleX() * .9));
 			mario.setScaleY(new Double(mario.getScaleY() * .9));
 		}
+		if (pressedKeys.contains(KeyEvent.VK_1)) { //decrement speed
+			mario.setAnimationSpeed(-100);
+		}
+		if (pressedKeys.contains(KeyEvent.VK_2)) { //increment speed
+			mario.setAnimationSpeed(+100);
+		}
+		if (pressedKeys.contains(KeyEvent.VK_3)) { //decrement speed
+			mario.animate("jump");
+		}
+		if (pressedKeys.contains(KeyEvent.VK_4)) { //decrement speed
+			mario.animate("kick");
+		}
 	}
-	
+
 	/**
 	 * Engine automatically invokes draw() every frame as well. If we want to make sure mario gets drawn to
 	 * the screen, we need to make sure to override this method and call mario's draw method.
@@ -125,7 +140,7 @@ public class LabOneGame extends Game{
 	@Override
 	public void draw(Graphics g){
 		super.draw(g);
-		
+
 		/* Same, just check for null in case a frame gets thrown in before Mario is initialized */
 		if(mario != null) mario.draw(g);
 	}
