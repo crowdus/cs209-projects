@@ -17,7 +17,7 @@ public class AnimatedSprite extends Sprite {
 
     private String fileName;
 
-    private ArrayList<Image> frames;
+    private ArrayList<BufferedImage> frames;
 
     private int currentFrame;
 
@@ -35,12 +35,7 @@ public class AnimatedSprite extends Sprite {
     public AnimatedSprite(String id, String filename, Point position) {
         super(id, filename, position);
 
-        ArrayList<String> filenames = new ArrayList<String>();
-        filenames.add("mariojump1.jpg");
-        filenames.add("mariojump2.jpg");
-        filenames.add("mariokick1.jpg");
-        filenames.add("mariokick2.jpg");
-        initializeFrames(filenames);
+        initializeFrames();
 
         //initialize a GameClock
         initGameClock();
@@ -77,21 +72,33 @@ public class AnimatedSprite extends Sprite {
        if (!playing){
            return;
        }
-
-       if(this.gameClock.getElapsedTime() < this.animationSpeed) {
-           //increment frames
-           this.currentFrame = this.currentFrame + 1;
-           super.draw(g);
+       //check if playing and elapsed time
+        //loop back to beginning if mario at last frame
+       while(this.gameClock.getElapsedTime() < this.animationSpeed && this.playing == true) {
+           //increment frames if not at end
+           if(this.currentFrame < this.endFrame){
+               this.currentFrame = this.currentFrame + 1;
+           }
+           else{
+               this.currentFrame = this.startFrame;
+           }
+           this.gameClock.resetGameClock();
        }
-       this.gameClock.resetGameClock();
+       super.draw(g);
     }
 
-    public void initializeFrames(ArrayList<String> frameFiles){
-        int i;
-        for(i = 0; i < frameFiles.size(); i++){
-            //filename -> images
-            this.frames.add(readImage(frameFiles.get(i)));
-        }
+    public void initializeFrames(){
+
+        ArrayList<String> filenames = new ArrayList<String>();
+        filenames.add("mariojump1.jpg");
+        filenames.add("mariojump2.jpg");
+        filenames.add("mariokick1.jpg");
+        filenames.add("mariokick2.jpg");
+        this.frames.add(readImage("mariojump1.jpg"));
+        this.frames.add(readImage("mariojump2.jpg"));
+        this.frames.add(readImage("mariokick1.jpg"));
+        this.frames.add(readImage("mariokick2.jpg"));
+
 
         Animation jump = new Animation("jump", 0, 1);
         Animation kick = new Animation("kick", 2, 3);

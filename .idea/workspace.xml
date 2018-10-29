@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="679f21e0-1726-404e-b512-5a749481b2f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Lab 1/src/edu/virginia/lab1test/LabTwoGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab 1/src/edu/virginia/engine/display/AnimatedSprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/src/edu/virginia/engine/display/AnimatedSprite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 1/src/edu/virginia/engine/display/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 1/src/edu/virginia/engine/display/Animation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab 1/edu/virginia/engine/display/AnimatedSprite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab 1/edu/virginia/engine/display/AnimatedSprite.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,13 +17,11 @@
     <session id="495881680">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -44,23 +40,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="4643" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4643" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lab 1/src/edu/virginia/engine/display/AnimatedSprite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="125" column="38" lean-forward="true" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#953#961#0" expanded="true" />
